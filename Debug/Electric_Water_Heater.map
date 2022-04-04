@@ -165,7 +165,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x2c28
+.text           0x00000000     0x2c2c
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -428,22 +428,22 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text.setting_mode
                 0x0000273a      0x260 ./Application/main.o
                 0x0000273a                setting_mode
- .text.main     0x0000299a      0x204 ./Application/main.o
+ .text.main     0x0000299a      0x208 ./Application/main.o
                 0x0000299a                main
- .text.libgcc   0x00002b9e       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                0x00002b9e                __udivmodqi4
- .text.libgcc   0x00002bb6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00002bb6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00002bb6        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00002bb6       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00002bb6                __prologue_saves__
- .text.libgcc   0x00002bee       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00002bee                __epilogue_restores__
-                0x00002c24                . = ALIGN (0x2)
+ .text.libgcc   0x00002ba2       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
+                0x00002ba2                __udivmodqi4
+ .text.libgcc   0x00002bba        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00002bba        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00002bba        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00002bba       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00002bba                __prologue_saves__
+ .text.libgcc   0x00002bf2       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00002bf2                __epilogue_restores__
+                0x00002c28                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00002c24        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00002c24                exit
-                0x00002c24                _exit
+ .fini9         0x00002c28        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00002c28                exit
+                0x00002c28                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -462,11 +462,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00002c24        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00002c28        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00002c28                _etext = .
+                0x00002c2c                _etext = .
 
-.data           0x00800060      0x10a load address 0x00002c28
+.data           0x00800060      0x10a load address 0x00002c2c
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -507,9 +507,9 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .data          0x00800068      0x100 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clz.o)
                 0x00800068                __clz_tab
  *(.data*)
- .data.SITTING_TEMP
+ .data.SETTING_TEMP
                 0x00800168        0x1 ./Application/main.o
-                0x00800168                SITTING_TEMP
+                0x00800168                SETTING_TEMP
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
@@ -585,8 +585,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00800199                TIME_100mS_COUNTER
  *(COMMON)
                 0x0080019a                PROVIDE (__bss_end, .)
-                0x00002c28                __data_load_start = LOADADDR (.data)
-                0x00002d32                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00002c2c                __data_load_start = LOADADDR (.data)
+                0x00002d36                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080019a        0x0
                 0x0080019a                PROVIDE (__noinit_start, .)
@@ -611,7 +611,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x3000
+.stab           0x00000000     0x300c
  *(.stab)
  .stab          0x00000000      0x204 ./MCAL/TIMER1/Src/Timer1.o
  .stab          0x00000204      0x1d4 ./MCAL/TIMER0/Src/Timer0.o
@@ -634,8 +634,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                                 0x774 (size before relaxing)
  .stab          0x00002520      0x24c ./HAL/BUTTON/Src/Button.o
                                 0x354 (size before relaxing)
- .stab          0x0000276c      0x894 ./Application/main.o
-                                0xbdc (size before relaxing)
+ .stab          0x0000276c      0x8a0 ./Application/main.o
+                                0xbe8 (size before relaxing)
 
 .stabstr        0x00000000     0x18e6
  *(.stabstr)

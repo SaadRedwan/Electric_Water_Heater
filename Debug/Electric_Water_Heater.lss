@@ -3,33 +3,33 @@ Electric_Water_Heater.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00002c28  00000000  00000000  00000094  2**1
+  0 .text         00002c2c  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         0000010a  00800060  00002c28  00002cbc  2**0
+  1 .data         0000010a  00800060  00002c2c  00002cc0  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000030  0080016a  0080016a  00002dc6  2**0
+  2 .bss          00000030  0080016a  0080016a  00002dca  2**0
                   ALLOC
-  3 .stab         00003000  00000000  00000000  00002dc8  2**2
+  3 .stab         0000300c  00000000  00000000  00002dcc  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      000018e6  00000000  00000000  00005dc8  2**0
+  4 .stabstr      000018e6  00000000  00000000  00005dd8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 000001c0  00000000  00000000  000076ae  2**0
+  5 .debug_aranges 000001c0  00000000  00000000  000076be  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_pubnames 00000214  00000000  00000000  0000786e  2**0
+  6 .debug_pubnames 00000214  00000000  00000000  0000787e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_info   00002612  00000000  00000000  00007a82  2**0
+  7 .debug_info   00002612  00000000  00000000  00007a92  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 000014ce  00000000  00000000  0000a094  2**0
+  8 .debug_abbrev 000014ce  00000000  00000000  0000a0a4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_line   0000130b  00000000  00000000  0000b562  2**0
+  9 .debug_line   0000130b  00000000  00000000  0000b572  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_frame  000001e0  00000000  00000000  0000c870  2**2
+ 10 .debug_frame  000001e0  00000000  00000000  0000c880  2**2
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_str    00000307  00000000  00000000  0000ca50  2**0
+ 11 .debug_str    00000307  00000000  00000000  0000ca60  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_loc    00000a1a  00000000  00000000  0000cd57  2**0
+ 12 .debug_loc    00000a1a  00000000  00000000  0000cd67  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000050  00000000  00000000  0000d771  2**0
+ 13 .debug_ranges 00000050  00000000  00000000  0000d781  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -69,7 +69,7 @@ Disassembly of section .text:
       60:	11 e0       	ldi	r17, 0x01	; 1
       62:	a0 e6       	ldi	r26, 0x60	; 96
       64:	b0 e0       	ldi	r27, 0x00	; 0
-      66:	e8 e2       	ldi	r30, 0x28	; 40
+      66:	ec e2       	ldi	r30, 0x2C	; 44
       68:	fc e2       	ldi	r31, 0x2C	; 44
       6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
 
@@ -96,7 +96,7 @@ Disassembly of section .text:
       82:	b1 07       	cpc	r27, r17
       84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
       86:	0e 94 cd 14 	call	0x299a	; 0x299a <main>
-      8a:	0c 94 12 16 	jmp	0x2c24	; 0x2c24 <_exit>
+      8a:	0c 94 14 16 	jmp	0x2c28	; 0x2c28 <_exit>
 
 0000008e <__bad_interrupt>:
       8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -148,7 +148,7 @@ Disassembly of section .text:
       ec:	b0 e0       	ldi	r27, 0x00	; 0
       ee:	eb e7       	ldi	r30, 0x7B	; 123
       f0:	f0 e0       	ldi	r31, 0x00	; 0
-      f2:	0c 94 db 15 	jmp	0x2bb6	; 0x2bb6 <__prologue_saves__>
+      f2:	0c 94 dd 15 	jmp	0x2bba	; 0x2bba <__prologue_saves__>
       f6:	dc 01       	movw	r26, r24
       f8:	2b 01       	movw	r4, r22
       fa:	fa 01       	movw	r30, r20
@@ -473,14 +473,14 @@ Disassembly of section .text:
      378:	cd b7       	in	r28, 0x3d	; 61
      37a:	de b7       	in	r29, 0x3e	; 62
      37c:	e2 e1       	ldi	r30, 0x12	; 18
-     37e:	0c 94 f7 15 	jmp	0x2bee	; 0x2bee <__epilogue_restores__>
+     37e:	0c 94 f9 15 	jmp	0x2bf2	; 0x2bf2 <__epilogue_restores__>
 
 00000382 <__subsf3>:
      382:	a0 e2       	ldi	r26, 0x20	; 32
      384:	b0 e0       	ldi	r27, 0x00	; 0
      386:	e7 ec       	ldi	r30, 0xC7	; 199
      388:	f1 e0       	ldi	r31, 0x01	; 1
-     38a:	0c 94 e7 15 	jmp	0x2bce	; 0x2bce <__prologue_saves__+0x18>
+     38a:	0c 94 e9 15 	jmp	0x2bd2	; 0x2bd2 <__prologue_saves__+0x18>
      38e:	69 83       	std	Y+1, r22	; 0x01
      390:	7a 83       	std	Y+2, r23	; 0x02
      392:	8b 83       	std	Y+3, r24	; 0x03
@@ -518,14 +518,14 @@ Disassembly of section .text:
      3d8:	0e 94 cf 05 	call	0xb9e	; 0xb9e <__pack_f>
      3dc:	a0 96       	adiw	r28, 0x20	; 32
      3de:	e6 e0       	ldi	r30, 0x06	; 6
-     3e0:	0c 94 03 16 	jmp	0x2c06	; 0x2c06 <__epilogue_restores__+0x18>
+     3e0:	0c 94 05 16 	jmp	0x2c0a	; 0x2c0a <__epilogue_restores__+0x18>
 
 000003e4 <__addsf3>:
      3e4:	a0 e2       	ldi	r26, 0x20	; 32
      3e6:	b0 e0       	ldi	r27, 0x00	; 0
      3e8:	e8 ef       	ldi	r30, 0xF8	; 248
      3ea:	f1 e0       	ldi	r31, 0x01	; 1
-     3ec:	0c 94 e7 15 	jmp	0x2bce	; 0x2bce <__prologue_saves__+0x18>
+     3ec:	0c 94 e9 15 	jmp	0x2bd2	; 0x2bd2 <__prologue_saves__+0x18>
      3f0:	69 83       	std	Y+1, r22	; 0x01
      3f2:	7a 83       	std	Y+2, r23	; 0x02
      3f4:	8b 83       	std	Y+3, r24	; 0x03
@@ -559,14 +559,14 @@ Disassembly of section .text:
      432:	0e 94 cf 05 	call	0xb9e	; 0xb9e <__pack_f>
      436:	a0 96       	adiw	r28, 0x20	; 32
      438:	e6 e0       	ldi	r30, 0x06	; 6
-     43a:	0c 94 03 16 	jmp	0x2c06	; 0x2c06 <__epilogue_restores__+0x18>
+     43a:	0c 94 05 16 	jmp	0x2c0a	; 0x2c0a <__epilogue_restores__+0x18>
 
 0000043e <__mulsf3>:
      43e:	a0 e2       	ldi	r26, 0x20	; 32
      440:	b0 e0       	ldi	r27, 0x00	; 0
      442:	e5 e2       	ldi	r30, 0x25	; 37
      444:	f2 e0       	ldi	r31, 0x02	; 2
-     446:	0c 94 db 15 	jmp	0x2bb6	; 0x2bb6 <__prologue_saves__>
+     446:	0c 94 dd 15 	jmp	0x2bba	; 0x2bba <__prologue_saves__>
      44a:	69 83       	std	Y+1, r22	; 0x01
      44c:	7a 83       	std	Y+2, r23	; 0x02
      44e:	8b 83       	std	Y+3, r24	; 0x03
@@ -806,14 +806,14 @@ Disassembly of section .text:
      626:	0e 94 cf 05 	call	0xb9e	; 0xb9e <__pack_f>
      62a:	a0 96       	adiw	r28, 0x20	; 32
      62c:	e2 e1       	ldi	r30, 0x12	; 18
-     62e:	0c 94 f7 15 	jmp	0x2bee	; 0x2bee <__epilogue_restores__>
+     62e:	0c 94 f9 15 	jmp	0x2bf2	; 0x2bf2 <__epilogue_restores__>
 
 00000632 <__divsf3>:
      632:	a8 e1       	ldi	r26, 0x18	; 24
      634:	b0 e0       	ldi	r27, 0x00	; 0
      636:	ef e1       	ldi	r30, 0x1F	; 31
      638:	f3 e0       	ldi	r31, 0x03	; 3
-     63a:	0c 94 e3 15 	jmp	0x2bc6	; 0x2bc6 <__prologue_saves__+0x10>
+     63a:	0c 94 e5 15 	jmp	0x2bca	; 0x2bca <__prologue_saves__+0x10>
      63e:	69 83       	std	Y+1, r22	; 0x01
      640:	7a 83       	std	Y+2, r23	; 0x02
      642:	8b 83       	std	Y+3, r24	; 0x03
@@ -975,14 +975,14 @@ Disassembly of section .text:
      77e:	0e 94 cf 05 	call	0xb9e	; 0xb9e <__pack_f>
      782:	68 96       	adiw	r28, 0x18	; 24
      784:	ea e0       	ldi	r30, 0x0A	; 10
-     786:	0c 94 ff 15 	jmp	0x2bfe	; 0x2bfe <__epilogue_restores__+0x10>
+     786:	0c 94 01 16 	jmp	0x2c02	; 0x2c02 <__epilogue_restores__+0x10>
 
 0000078a <__gtsf2>:
      78a:	a8 e1       	ldi	r26, 0x18	; 24
      78c:	b0 e0       	ldi	r27, 0x00	; 0
      78e:	eb ec       	ldi	r30, 0xCB	; 203
      790:	f3 e0       	ldi	r31, 0x03	; 3
-     792:	0c 94 e7 15 	jmp	0x2bce	; 0x2bce <__prologue_saves__+0x18>
+     792:	0c 94 e9 15 	jmp	0x2bd2	; 0x2bd2 <__prologue_saves__+0x18>
      796:	69 83       	std	Y+1, r22	; 0x01
      798:	7a 83       	std	Y+2, r23	; 0x02
      79a:	8b 83       	std	Y+3, r24	; 0x03
@@ -1020,14 +1020,14 @@ Disassembly of section .text:
      7e0:	8f ef       	ldi	r24, 0xFF	; 255
      7e2:	68 96       	adiw	r28, 0x18	; 24
      7e4:	e6 e0       	ldi	r30, 0x06	; 6
-     7e6:	0c 94 03 16 	jmp	0x2c06	; 0x2c06 <__epilogue_restores__+0x18>
+     7e6:	0c 94 05 16 	jmp	0x2c0a	; 0x2c0a <__epilogue_restores__+0x18>
 
 000007ea <__gesf2>:
      7ea:	a8 e1       	ldi	r26, 0x18	; 24
      7ec:	b0 e0       	ldi	r27, 0x00	; 0
      7ee:	eb ef       	ldi	r30, 0xFB	; 251
      7f0:	f3 e0       	ldi	r31, 0x03	; 3
-     7f2:	0c 94 e7 15 	jmp	0x2bce	; 0x2bce <__prologue_saves__+0x18>
+     7f2:	0c 94 e9 15 	jmp	0x2bd2	; 0x2bd2 <__prologue_saves__+0x18>
      7f6:	69 83       	std	Y+1, r22	; 0x01
      7f8:	7a 83       	std	Y+2, r23	; 0x02
      7fa:	8b 83       	std	Y+3, r24	; 0x03
@@ -1065,14 +1065,14 @@ Disassembly of section .text:
      840:	8f ef       	ldi	r24, 0xFF	; 255
      842:	68 96       	adiw	r28, 0x18	; 24
      844:	e6 e0       	ldi	r30, 0x06	; 6
-     846:	0c 94 03 16 	jmp	0x2c06	; 0x2c06 <__epilogue_restores__+0x18>
+     846:	0c 94 05 16 	jmp	0x2c0a	; 0x2c0a <__epilogue_restores__+0x18>
 
 0000084a <__ltsf2>:
      84a:	a8 e1       	ldi	r26, 0x18	; 24
      84c:	b0 e0       	ldi	r27, 0x00	; 0
      84e:	eb e2       	ldi	r30, 0x2B	; 43
      850:	f4 e0       	ldi	r31, 0x04	; 4
-     852:	0c 94 e7 15 	jmp	0x2bce	; 0x2bce <__prologue_saves__+0x18>
+     852:	0c 94 e9 15 	jmp	0x2bd2	; 0x2bd2 <__prologue_saves__+0x18>
      856:	69 83       	std	Y+1, r22	; 0x01
      858:	7a 83       	std	Y+2, r23	; 0x02
      85a:	8b 83       	std	Y+3, r24	; 0x03
@@ -1110,14 +1110,14 @@ Disassembly of section .text:
      8a0:	81 e0       	ldi	r24, 0x01	; 1
      8a2:	68 96       	adiw	r28, 0x18	; 24
      8a4:	e6 e0       	ldi	r30, 0x06	; 6
-     8a6:	0c 94 03 16 	jmp	0x2c06	; 0x2c06 <__epilogue_restores__+0x18>
+     8a6:	0c 94 05 16 	jmp	0x2c0a	; 0x2c0a <__epilogue_restores__+0x18>
 
 000008aa <__floatsisf>:
      8aa:	a8 e0       	ldi	r26, 0x08	; 8
      8ac:	b0 e0       	ldi	r27, 0x00	; 0
      8ae:	eb e5       	ldi	r30, 0x5B	; 91
      8b0:	f4 e0       	ldi	r31, 0x04	; 4
-     8b2:	0c 94 e4 15 	jmp	0x2bc8	; 0x2bc8 <__prologue_saves__+0x12>
+     8b2:	0c 94 e6 15 	jmp	0x2bcc	; 0x2bcc <__prologue_saves__+0x12>
      8b6:	9b 01       	movw	r18, r22
      8b8:	ac 01       	movw	r20, r24
      8ba:	83 e0       	ldi	r24, 0x03	; 3
@@ -1202,14 +1202,14 @@ Disassembly of section .text:
      95a:	0e 94 cf 05 	call	0xb9e	; 0xb9e <__pack_f>
      95e:	28 96       	adiw	r28, 0x08	; 8
      960:	e9 e0       	ldi	r30, 0x09	; 9
-     962:	0c 94 00 16 	jmp	0x2c00	; 0x2c00 <__epilogue_restores__+0x12>
+     962:	0c 94 02 16 	jmp	0x2c04	; 0x2c04 <__epilogue_restores__+0x12>
 
 00000966 <__fixsfsi>:
      966:	ac e0       	ldi	r26, 0x0C	; 12
      968:	b0 e0       	ldi	r27, 0x00	; 0
      96a:	e9 eb       	ldi	r30, 0xB9	; 185
      96c:	f4 e0       	ldi	r31, 0x04	; 4
-     96e:	0c 94 eb 15 	jmp	0x2bd6	; 0x2bd6 <__prologue_saves__+0x20>
+     96e:	0c 94 ed 15 	jmp	0x2bda	; 0x2bda <__prologue_saves__+0x20>
      972:	69 83       	std	Y+1, r22	; 0x01
      974:	7a 83       	std	Y+2, r23	; 0x02
      976:	8b 83       	std	Y+3, r24	; 0x03
@@ -1285,14 +1285,14 @@ Disassembly of section .text:
      a04:	ca 01       	movw	r24, r20
      a06:	2c 96       	adiw	r28, 0x0c	; 12
      a08:	e2 e0       	ldi	r30, 0x02	; 2
-     a0a:	0c 94 07 16 	jmp	0x2c0e	; 0x2c0e <__epilogue_restores__+0x20>
+     a0a:	0c 94 09 16 	jmp	0x2c12	; 0x2c12 <__epilogue_restores__+0x20>
 
 00000a0e <__floatunsisf>:
      a0e:	a8 e0       	ldi	r26, 0x08	; 8
      a10:	b0 e0       	ldi	r27, 0x00	; 0
      a12:	ed e0       	ldi	r30, 0x0D	; 13
      a14:	f5 e0       	ldi	r31, 0x05	; 5
-     a16:	0c 94 e3 15 	jmp	0x2bc6	; 0x2bc6 <__prologue_saves__+0x10>
+     a16:	0c 94 e5 15 	jmp	0x2bca	; 0x2bca <__prologue_saves__+0x10>
      a1a:	7b 01       	movw	r14, r22
      a1c:	8c 01       	movw	r16, r24
      a1e:	61 15       	cp	r22, r1
@@ -1404,7 +1404,7 @@ Disassembly of section .text:
      af4:	0e 94 cf 05 	call	0xb9e	; 0xb9e <__pack_f>
      af8:	28 96       	adiw	r28, 0x08	; 8
      afa:	ea e0       	ldi	r30, 0x0A	; 10
-     afc:	0c 94 ff 15 	jmp	0x2bfe	; 0x2bfe <__epilogue_restores__+0x10>
+     afc:	0c 94 01 16 	jmp	0x2c02	; 0x2c02 <__epilogue_restores__+0x10>
 
 00000b00 <__clzsi2>:
      b00:	ef 92       	push	r14
@@ -4261,7 +4261,7 @@ void SSD_Display(u8 num)
     1cf8:	8f 8d       	ldd	r24, Y+31	; 0x1f
     1cfa:	9a e0       	ldi	r25, 0x0A	; 10
     1cfc:	69 2f       	mov	r22, r25
-    1cfe:	0e 94 cf 15 	call	0x2b9e	; 0x2b9e <__udivmodqi4>
+    1cfe:	0e 94 d1 15 	call	0x2ba2	; 0x2ba2 <__udivmodqi4>
     1d02:	89 2f       	mov	r24, r25
     1d04:	82 95       	swap	r24
     1d06:	80 7f       	andi	r24, 0xF0	; 240
@@ -4270,7 +4270,7 @@ void SSD_Display(u8 num)
     1d0a:	8f 8d       	ldd	r24, Y+31	; 0x1f
     1d0c:	9a e0       	ldi	r25, 0x0A	; 10
     1d0e:	69 2f       	mov	r22, r25
-    1d10:	0e 94 cf 15 	call	0x2b9e	; 0x2b9e <__udivmodqi4>
+    1d10:	0e 94 d1 15 	call	0x2ba2	; 0x2ba2 <__udivmodqi4>
     1d14:	82 95       	swap	r24
     1d16:	80 7f       	andi	r24, 0xF0	; 240
     1d18:	8d 8f       	std	Y+29, r24	; 0x1d
@@ -5538,7 +5538,7 @@ ISR(TIMER1_OVF_vect)
     24a0:	81 30       	cpi	r24, 0x01	; 1
     24a2:	31 f4       	brne	.+12     	; 0x24b0 <__vector_9+0x42>
 	{
-		SSD_DelayWithDisaplayMS(SITTING_TEMP,100);
+		SSD_DelayWithDisaplayMS(SETTING_TEMP,100);
     24a4:	80 91 68 01 	lds	r24, 0x0168
     24a8:	64 e6       	ldi	r22, 0x64	; 100
     24aa:	70 e0       	ldi	r23, 0x00	; 0
@@ -5554,13 +5554,13 @@ ISR(TIMER1_OVF_vect)
     24c0:	59 f4       	brne	.+22     	; 0x24d8 <__vector_9+0x6a>
 	{
 		/*save the last setting temperature*/
-		EEPROM24C16_Write_Byte(0,SITTING_TEMP);
+		EEPROM24C16_Write_Byte(0,SETTING_TEMP);
     24c2:	20 91 68 01 	lds	r18, 0x0168
     24c6:	80 e0       	ldi	r24, 0x00	; 0
     24c8:	90 e0       	ldi	r25, 0x00	; 0
     24ca:	62 2f       	mov	r22, r18
     24cc:	0e 94 ee 10 	call	0x21dc	; 0x21dc <EEPROM24C16_Write_Byte>
-//		EEPROM_Write(0,SITTING_TEMP);
+		//		EEPROM_Write(0,SETTING_TEMP);
 		/*put the Electric Water Heater out of setting mode*/
 		SETTING_MODE_STATE=FALSE;
     24d0:	10 92 6b 01 	sts	0x016B, r1
@@ -5845,7 +5845,7 @@ ISR(TIMER0_OVF_vect)
     26e6:	80 91 6e 01 	lds	r24, 0x016E
     26ea:	9a e0       	ldi	r25, 0x0A	; 10
     26ec:	69 2f       	mov	r22, r25
-    26ee:	0e 94 cf 15 	call	0x2b9e	; 0x2b9e <__udivmodqi4>
+    26ee:	0e 94 d1 15 	call	0x2ba2	; 0x2ba2 <__udivmodqi4>
     26f2:	80 93 6e 01 	sts	0x016E, r24
 
 		/*makes value of counter for 100ms interrupt equals zero to start count again*/
@@ -5893,14 +5893,14 @@ ISR(TIMER0_OVF_vect)
 
 
 
-/*put the Electric Water Heater in the sitting mode operation*/
+/*put the Electric Water Heater in the setting mode operation*/
 void setting_mode()
 {
     273a:	df 93       	push	r29
     273c:	cf 93       	push	r28
     273e:	cd b7       	in	r28, 0x3d	; 61
     2740:	de b7       	in	r29, 0x3e	; 62
-	/*once it enter the sitting mode it will not out unless no button up or down pressed for 5 second*/
+	/*once it enter the setting mode it will not out unless no button up or down pressed for 5 second*/
 	while (1)
 	{
 		/*must be still in setting mode*/
@@ -5921,13 +5921,13 @@ void setting_mode()
     275e:	88 23       	and	r24, r24
     2760:	d9 f7       	brne	.-10     	; 0x2758 <setting_mode+0x1e>
 			/*The maximum possible set temperature is 75 degrees*/
-			if(SITTING_TEMP<75)
+			if(SETTING_TEMP<75)
     2762:	80 91 68 01 	lds	r24, 0x0168
     2766:	8b 34       	cpi	r24, 0x4B	; 75
     2768:	a0 f4       	brcc	.+40     	; 0x2792 <setting_mode+0x58>
 			{
 				/*if button up pressed setting temperature increase by 5 degrees*/
-				SITTING_TEMP+=5;
+				SETTING_TEMP+=5;
     276a:	80 91 68 01 	lds	r24, 0x0168
     276e:	8b 5f       	subi	r24, 0xFB	; 251
     2770:	80 93 68 01 	sts	0x0168, r24
@@ -5938,13 +5938,13 @@ void setting_mode()
 				TIME_5S_COUNTER=0;
     2774:	10 92 98 01 	sts	0x0198, r1
 				/*update SSD with the updated setting temperature*/
-				SSD_DelayWithDisaplayMS(SITTING_TEMP,100);
+				SSD_DelayWithDisaplayMS(SETTING_TEMP,100);
     2778:	80 91 68 01 	lds	r24, 0x0168
     277c:	64 e6       	ldi	r22, 0x64	; 100
     277e:	70 e0       	ldi	r23, 0x00	; 0
     2780:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
 				/*save the last updated temperature*/
-				EEPROM24C16_Write_Byte(0,SITTING_TEMP);
+				EEPROM24C16_Write_Byte(0,SETTING_TEMP);
     2784:	20 91 68 01 	lds	r18, 0x0168
     2788:	80 e0       	ldi	r24, 0x00	; 0
     278a:	90 e0       	ldi	r25, 0x00	; 0
@@ -5955,7 +5955,7 @@ void setting_mode()
 			 * heating element should be ON
 			 * cooling element should be OFF
 			 * */
-			if(AVG_TEMP_SENSING==(SITTING_TEMP-5))
+			if(AVG_TEMP_SENSING==(SETTING_TEMP-5))
     2792:	80 91 6e 01 	lds	r24, 0x016E
     2796:	28 2f       	mov	r18, r24
     2798:	30 e0       	ldi	r19, 0x00	; 0
@@ -5992,7 +5992,7 @@ void setting_mode()
 			 * heating element should be OFF
 			 * cooling element should be ON
 			 * */
-			else if((AVG_TEMP_SENSING-5)==SITTING_TEMP)
+			else if((AVG_TEMP_SENSING-5)==SETTING_TEMP)
     27d2:	80 91 6e 01 	lds	r24, 0x016E
     27d6:	88 2f       	mov	r24, r24
     27d8:	90 e0       	ldi	r25, 0x00	; 0
@@ -6045,26 +6045,26 @@ void setting_mode()
     2830:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
     2834:	88 23       	and	r24, r24
     2836:	d9 f7       	brne	.-10     	; 0x282e <setting_mode+0xf4>
-			if(SITTING_TEMP>35)
+			if(SETTING_TEMP>35)
     2838:	80 91 68 01 	lds	r24, 0x0168
     283c:	84 32       	cpi	r24, 0x24	; 36
     283e:	a0 f0       	brcs	.+40     	; 0x2868 <setting_mode+0x12e>
 			{
 				/*if button down pressed setting temperature decrease by 5 degrees*/
-				SITTING_TEMP-=5;
+				SETTING_TEMP-=5;
     2840:	80 91 68 01 	lds	r24, 0x0168
     2844:	85 50       	subi	r24, 0x05	; 5
     2846:	80 93 68 01 	sts	0x0168, r24
 				TIME_5S_COUNTER=0;
     284a:	10 92 98 01 	sts	0x0198, r1
 				/*update SSD with the updated setting temperature*/
-				SSD_DelayWithDisaplayMS(SITTING_TEMP,100);
+				SSD_DelayWithDisaplayMS(SETTING_TEMP,100);
     284e:	80 91 68 01 	lds	r24, 0x0168
     2852:	64 e6       	ldi	r22, 0x64	; 100
     2854:	70 e0       	ldi	r23, 0x00	; 0
     2856:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
 				/*save the last updated temperature*/
-				EEPROM24C16_Write_Byte(0,SITTING_TEMP);
+				EEPROM24C16_Write_Byte(0,SETTING_TEMP);
     285a:	20 91 68 01 	lds	r18, 0x0168
     285e:	80 e0       	ldi	r24, 0x00	; 0
     2860:	90 e0       	ldi	r25, 0x00	; 0
@@ -6075,7 +6075,7 @@ void setting_mode()
 			 * heating element should be ON
 			 * cooling element should be OFF
 			 * */
-			if(AVG_TEMP_SENSING==(SITTING_TEMP-5))
+			if(AVG_TEMP_SENSING==(SETTING_TEMP-5))
     2868:	80 91 6e 01 	lds	r24, 0x016E
     286c:	28 2f       	mov	r18, r24
     286e:	30 e0       	ldi	r19, 0x00	; 0
@@ -6112,7 +6112,7 @@ void setting_mode()
 			 * heating element should be OFF
 			 * cooling element should be ON
 			 * */
-			else if((AVG_TEMP_SENSING-5)==SITTING_TEMP)
+			else if((AVG_TEMP_SENSING-5)==SETTING_TEMP)
     28a8:	80 91 6e 01 	lds	r24, 0x016E
     28ac:	88 2f       	mov	r24, r24
     28ae:	90 e0       	ldi	r25, 0x00	; 0
@@ -6159,7 +6159,7 @@ void setting_mode()
 			 * heating element should be ON
 			 * cooling element should be OFF
 			 * */
-			if(AVG_TEMP_SENSING==(SITTING_TEMP-5))
+			if(AVG_TEMP_SENSING==(SETTING_TEMP-5))
     28f8:	80 91 6e 01 	lds	r24, 0x016E
     28fc:	28 2f       	mov	r18, r24
     28fe:	30 e0       	ldi	r19, 0x00	; 0
@@ -6196,7 +6196,7 @@ void setting_mode()
 			 * heating element should be OFF
 			 * cooling element should be ON
 			 * */
-			else if((AVG_TEMP_SENSING-5)==SITTING_TEMP)
+			else if((AVG_TEMP_SENSING-5)==SETTING_TEMP)
     2938:	80 91 6e 01 	lds	r24, 0x016E
     293c:	88 2f       	mov	r24, r24
     293e:	90 e0       	ldi	r25, 0x00	; 0
@@ -6237,13 +6237,13 @@ void setting_mode()
     2980:	70 e0       	ldi	r23, 0x00	; 0
     2982:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
 			/*save the last updated temperature*/
-			EEPROM24C16_Write_Byte(0,SITTING_TEMP);
+			EEPROM24C16_Write_Byte(0,SETTING_TEMP);
     2986:	20 91 68 01 	lds	r18, 0x0168
     298a:	80 e0       	ldi	r24, 0x00	; 0
     298c:	90 e0       	ldi	r25, 0x00	; 0
     298e:	62 2f       	mov	r22, r18
     2990:	0e 94 ee 10 	call	0x21dc	; 0x21dc <EEPROM24C16_Write_Byte>
-//			EEPROM_Write(0,SITTING_TEMP);
+			//			EEPROM_Write(0,SETTING_TEMP);
 			return;
 		}
 	}
@@ -6272,397 +6272,398 @@ int main(void)
     29a6:	0e 94 3f 10 	call	0x207e	; 0x207e <Led_Init>
 	SSD_Init();
     29aa:	0e 94 5b 0e 	call	0x1cb6	; 0x1cb6 <SSD_Init>
-//	EEPROM24C16_Init();
+	EEPROM24C16_Init();
+    29ae:	0e 94 e5 10 	call	0x21ca	; 0x21ca <EEPROM24C16_Init>
 
 	/*configure pins of heating and cooling elements*/
 	Dio_ConfigChannel(HEATING_ELEMENT_REG,HEATING_ELEMENT_PIN,OUTPUT);
-    29ae:	e8 e3       	ldi	r30, 0x38	; 56
-    29b0:	f0 e0       	ldi	r31, 0x00	; 0
-    29b2:	80 81       	ld	r24, Z
-    29b4:	60 e0       	ldi	r22, 0x00	; 0
-    29b6:	41 e0       	ldi	r20, 0x01	; 1
-    29b8:	0e 94 4e 0a 	call	0x149c	; 0x149c <Dio_ConfigChannel>
+    29b2:	e8 e3       	ldi	r30, 0x38	; 56
+    29b4:	f0 e0       	ldi	r31, 0x00	; 0
+    29b6:	80 81       	ld	r24, Z
+    29b8:	60 e0       	ldi	r22, 0x00	; 0
+    29ba:	41 e0       	ldi	r20, 0x01	; 1
+    29bc:	0e 94 4e 0a 	call	0x149c	; 0x149c <Dio_ConfigChannel>
 	Dio_ConfigChannel(COOLING_ELEMENT_REG,COOLING_ELEMENT_PIN,OUTPUT);
-    29bc:	e8 e3       	ldi	r30, 0x38	; 56
-    29be:	f0 e0       	ldi	r31, 0x00	; 0
-    29c0:	80 81       	ld	r24, Z
-    29c2:	61 e0       	ldi	r22, 0x01	; 1
-    29c4:	41 e0       	ldi	r20, 0x01	; 1
-    29c6:	0e 94 4e 0a 	call	0x149c	; 0x149c <Dio_ConfigChannel>
+    29c0:	e8 e3       	ldi	r30, 0x38	; 56
+    29c2:	f0 e0       	ldi	r31, 0x00	; 0
+    29c4:	80 81       	ld	r24, Z
+    29c6:	61 e0       	ldi	r22, 0x01	; 1
+    29c8:	41 e0       	ldi	r20, 0x01	; 1
+    29ca:	0e 94 4e 0a 	call	0x149c	; 0x149c <Dio_ConfigChannel>
 
 	/*heating and cooling elements are in OFF state at by default */
 	Dio_WriteChannel(HEATING_ELEMENT_REG,HEATING_ELEMENT_PIN,STD_LOW);
-    29ca:	e8 e3       	ldi	r30, 0x38	; 56
-    29cc:	f0 e0       	ldi	r31, 0x00	; 0
-    29ce:	80 81       	ld	r24, Z
-    29d0:	60 e0       	ldi	r22, 0x00	; 0
-    29d2:	40 e0       	ldi	r20, 0x00	; 0
-    29d4:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    29ce:	e8 e3       	ldi	r30, 0x38	; 56
+    29d0:	f0 e0       	ldi	r31, 0x00	; 0
+    29d2:	80 81       	ld	r24, Z
+    29d4:	60 e0       	ldi	r22, 0x00	; 0
+    29d6:	40 e0       	ldi	r20, 0x00	; 0
+    29d8:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 	Dio_WriteChannel(COOLING_ELEMENT_REG,COOLING_ELEMENT_PIN,STD_LOW);
-    29d8:	e8 e3       	ldi	r30, 0x38	; 56
-    29da:	f0 e0       	ldi	r31, 0x00	; 0
-    29dc:	80 81       	ld	r24, Z
-    29de:	61 e0       	ldi	r22, 0x01	; 1
-    29e0:	40 e0       	ldi	r20, 0x00	; 0
-    29e2:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    29dc:	e8 e3       	ldi	r30, 0x38	; 56
+    29de:	f0 e0       	ldi	r31, 0x00	; 0
+    29e0:	80 81       	ld	r24, Z
+    29e2:	61 e0       	ldi	r22, 0x01	; 1
+    29e4:	40 e0       	ldi	r20, 0x00	; 0
+    29e6:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 
 	/*put heating and cooling LEDs in OFF state*/
 	Led_OFF(COOLING_ELEMENT_LED);
-    29e6:	82 e0       	ldi	r24, 0x02	; 2
-    29e8:	0e 94 86 10 	call	0x210c	; 0x210c <Led_OFF>
+    29ea:	82 e0       	ldi	r24, 0x02	; 2
+    29ec:	0e 94 86 10 	call	0x210c	; 0x210c <Led_OFF>
 	Led_OFF(HEATING_ELEMENT_LED);
-    29ec:	81 e0       	ldi	r24, 0x01	; 1
-    29ee:	0e 94 86 10 	call	0x210c	; 0x210c <Led_OFF>
-
+    29f0:	81 e0       	ldi	r24, 0x01	; 1
+    29f2:	0e 94 86 10 	call	0x210c	; 0x210c <Led_OFF>
 
 
 	while (1)
 	{
+		/*display the current water temperature*/
 		SSD_DelayWithDisaplayMS(AVG_TEMP_SENSING,100);
-    29f2:	80 91 6e 01 	lds	r24, 0x016E
-    29f6:	64 e6       	ldi	r22, 0x64	; 100
-    29f8:	70 e0       	ldi	r23, 0x00	; 0
-    29fa:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
+    29f6:	80 91 6e 01 	lds	r24, 0x016E
+    29fa:	64 e6       	ldi	r22, 0x64	; 100
+    29fc:	70 e0       	ldi	r23, 0x00	; 0
+    29fe:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
 		/*
 		 * when power is connected the Electric Water Heater is in OFF state
 		 * must release ON_OFF_BUTTON to enter in ON state
 		 * */
 		/*ON_OFF_BUTTON is PULL down to take action when it release*/
 		if(Button_Pressed(ON_OFF_BUTTON)&&ON_OFF_STATE==FALSE)
-    29fe:	80 e0       	ldi	r24, 0x00	; 0
-    2a00:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2a04:	88 23       	and	r24, r24
-    2a06:	09 f4       	brne	.+2      	; 0x2a0a <main+0x70>
-    2a08:	5f c0       	rjmp	.+190    	; 0x2ac8 <main+0x12e>
-    2a0a:	80 91 6a 01 	lds	r24, 0x016A
-    2a0e:	88 23       	and	r24, r24
-    2a10:	09 f0       	breq	.+2      	; 0x2a14 <main+0x7a>
-    2a12:	5a c0       	rjmp	.+180    	; 0x2ac8 <main+0x12e>
+    2a02:	80 e0       	ldi	r24, 0x00	; 0
+    2a04:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2a08:	88 23       	and	r24, r24
+    2a0a:	09 f4       	brne	.+2      	; 0x2a0e <main+0x74>
+    2a0c:	7a c0       	rjmp	.+244    	; 0x2b02 <main+0x168>
+    2a0e:	80 91 6a 01 	lds	r24, 0x016A
+    2a12:	88 23       	and	r24, r24
+    2a14:	09 f0       	breq	.+2      	; 0x2a18 <main+0x7e>
+    2a16:	75 c0       	rjmp	.+234    	; 0x2b02 <main+0x168>
 		{
 			while(Button_Pressed(ON_OFF_BUTTON));
-    2a14:	80 e0       	ldi	r24, 0x00	; 0
-    2a16:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2a1a:	88 23       	and	r24, r24
-    2a1c:	d9 f7       	brne	.-10     	; 0x2a14 <main+0x7a>
+    2a18:	80 e0       	ldi	r24, 0x00	; 0
+    2a1a:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2a1e:	88 23       	and	r24, r24
+    2a20:	d9 f7       	brne	.-10     	; 0x2a18 <main+0x7e>
 
 			Led_ON(ON_OFF_LED);
-    2a1e:	80 e0       	ldi	r24, 0x00	; 0
-    2a20:	0e 94 55 10 	call	0x20aa	; 0x20aa <Led_ON>
+    2a22:	80 e0       	ldi	r24, 0x00	; 0
+    2a24:	0e 94 55 10 	call	0x20aa	; 0x20aa <Led_ON>
 
 			/*retrieved the stored set temperature from the External EPPROM*/
-			SITTING_TEMP=EEPROM24C16_Read_Byte(0);
-    2a24:	80 e0       	ldi	r24, 0x00	; 0
-    2a26:	90 e0       	ldi	r25, 0x00	; 0
-    2a28:	0e 94 9c 11 	call	0x2338	; 0x2338 <EEPROM24C16_Read_Byte>
-    2a2c:	80 93 68 01 	sts	0x0168, r24
-//			SITTING_TEMP=EEPROM_Read(0);
+			SETTING_TEMP=EEPROM24C16_Read_Byte(0);
+    2a28:	80 e0       	ldi	r24, 0x00	; 0
+    2a2a:	90 e0       	ldi	r25, 0x00	; 0
+    2a2c:	0e 94 9c 11 	call	0x2338	; 0x2338 <EEPROM24C16_Read_Byte>
+    2a30:	80 93 68 01 	sts	0x0168, r24
+			//			SETTING_TEMP=EEPROM_Read(0);
 
 			ON_OFF_STATE=TRUE;
-    2a30:	81 e0       	ldi	r24, 0x01	; 1
-    2a32:	80 93 6a 01 	sts	0x016A, r24
+    2a34:	81 e0       	ldi	r24, 0x01	; 1
+    2a36:	80 93 6a 01 	sts	0x016A, r24
 
 			/*display the current water temperature*/
-			SSD_DelayWithDisaplayMS(AVG_TEMP_SENSING,1000);
-    2a36:	80 91 6e 01 	lds	r24, 0x016E
-    2a3a:	68 ee       	ldi	r22, 0xE8	; 232
-    2a3c:	73 e0       	ldi	r23, 0x03	; 3
-    2a3e:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
+			SSD_DelayWithDisaplayMS(AVG_TEMP_SENSING,100);
+    2a3a:	80 91 6e 01 	lds	r24, 0x016E
+    2a3e:	64 e6       	ldi	r22, 0x64	; 100
+    2a40:	70 e0       	ldi	r23, 0x00	; 0
+    2a42:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
+			 * Confider the timer0
+			 * by setting preload and prescaler
+			 * and enable interrupt of timer0
+			 * so interrupt occurs almost every 1ms so can use it to make 100ms
+			 */
+			TIMER0_TCNT0_REG=TIMER0_PRELOAD;
+    2a46:	e2 e5       	ldi	r30, 0x52	; 82
+    2a48:	f0 e0       	ldi	r31, 0x00	; 0
+    2a4a:	88 e5       	ldi	r24, 0x58	; 88
+    2a4c:	80 83       	st	Z, r24
+			TIMER0_TCCR0_REG=TIMER0_CS_64_PRESCALER;
+    2a4e:	e3 e5       	ldi	r30, 0x53	; 83
+    2a50:	f0 e0       	ldi	r31, 0x00	; 0
+    2a52:	83 e0       	ldi	r24, 0x03	; 3
+    2a54:	80 83       	st	Z, r24
+			TIMER0_EnableInterrupt();
+    2a56:	0e 94 b8 07 	call	0xf70	; 0xf70 <TIMER0_EnableInterrupt>
+			 * Confider the timer1
+			 * by setting preload and prescaler
+			 * and enable interrupt of timer1
+			 * so interrupt occurs every 1 second so can use it to make 1 second
+			 */
+			TIMER1_TCNT1_REG=TIMER1_PRELOAD;
+    2a5a:	ec e4       	ldi	r30, 0x4C	; 76
+    2a5c:	f0 e0       	ldi	r31, 0x00	; 0
+    2a5e:	87 ef       	ldi	r24, 0xF7	; 247
+    2a60:	92 ec       	ldi	r25, 0xC2	; 194
+    2a62:	91 83       	std	Z+1, r25	; 0x01
+    2a64:	80 83       	st	Z, r24
+			TIMER1_TCCR1A_REG=0x00;
+    2a66:	ef e4       	ldi	r30, 0x4F	; 79
+    2a68:	f0 e0       	ldi	r31, 0x00	; 0
+    2a6a:	10 82       	st	Z, r1
+			TIMER1_TCCR1B_REG=TIMER0_CS_1024_PRESCALER;
+    2a6c:	ee e4       	ldi	r30, 0x4E	; 78
+    2a6e:	f0 e0       	ldi	r31, 0x00	; 0
+    2a70:	85 e0       	ldi	r24, 0x05	; 5
+    2a72:	80 83       	st	Z, r24
+			TIMER1_EnableInterrupt();
+    2a74:	0e 94 75 07 	call	0xeea	; 0xeea <TIMER1_EnableInterrupt>
+
+			/*Enable all interrupts so interrupt of timer0 and timer1 can occure*/
+			EnableAllInterrupts();
+    2a78:	0e 94 d3 09 	call	0x13a6	; 0x13a6 <EnableAllInterrupts>
 			/*
 			 * if the current water temperature is less than the set temperature by 5 degrees
 			 * heating element should be ON
 			 * cooling element should be OFF
 			 * */
-			if(AVG_TEMP_SENSING==(SITTING_TEMP-5))
-    2a42:	80 91 6e 01 	lds	r24, 0x016E
-    2a46:	28 2f       	mov	r18, r24
-    2a48:	30 e0       	ldi	r19, 0x00	; 0
-    2a4a:	80 91 68 01 	lds	r24, 0x0168
-    2a4e:	88 2f       	mov	r24, r24
-    2a50:	90 e0       	ldi	r25, 0x00	; 0
-    2a52:	05 97       	sbiw	r24, 0x05	; 5
-    2a54:	28 17       	cp	r18, r24
-    2a56:	39 07       	cpc	r19, r25
-    2a58:	a1 f4       	brne	.+40     	; 0x2a82 <main+0xe8>
+			if(AVG_TEMP_SENSING==(SETTING_TEMP-5))
+    2a7c:	80 91 6e 01 	lds	r24, 0x016E
+    2a80:	28 2f       	mov	r18, r24
+    2a82:	30 e0       	ldi	r19, 0x00	; 0
+    2a84:	80 91 68 01 	lds	r24, 0x0168
+    2a88:	88 2f       	mov	r24, r24
+    2a8a:	90 e0       	ldi	r25, 0x00	; 0
+    2a8c:	05 97       	sbiw	r24, 0x05	; 5
+    2a8e:	28 17       	cp	r18, r24
+    2a90:	39 07       	cpc	r19, r25
+    2a92:	a1 f4       	brne	.+40     	; 0x2abc <main+0x122>
 			{
 				Dio_WriteChannel(HEATING_ELEMENT_REG,HEATING_ELEMENT_PIN,STD_HIGH);
-    2a5a:	e8 e3       	ldi	r30, 0x38	; 56
-    2a5c:	f0 e0       	ldi	r31, 0x00	; 0
-    2a5e:	80 81       	ld	r24, Z
-    2a60:	60 e0       	ldi	r22, 0x00	; 0
-    2a62:	41 e0       	ldi	r20, 0x01	; 1
-    2a64:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    2a94:	e8 e3       	ldi	r30, 0x38	; 56
+    2a96:	f0 e0       	ldi	r31, 0x00	; 0
+    2a98:	80 81       	ld	r24, Z
+    2a9a:	60 e0       	ldi	r22, 0x00	; 0
+    2a9c:	41 e0       	ldi	r20, 0x01	; 1
+    2a9e:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 				Dio_WriteChannel(COOLING_ELEMENT_REG,COOLING_ELEMENT_PIN,STD_LOW);
-    2a68:	e8 e3       	ldi	r30, 0x38	; 56
-    2a6a:	f0 e0       	ldi	r31, 0x00	; 0
-    2a6c:	80 81       	ld	r24, Z
-    2a6e:	61 e0       	ldi	r22, 0x01	; 1
-    2a70:	40 e0       	ldi	r20, 0x00	; 0
-    2a72:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    2aa2:	e8 e3       	ldi	r30, 0x38	; 56
+    2aa4:	f0 e0       	ldi	r31, 0x00	; 0
+    2aa6:	80 81       	ld	r24, Z
+    2aa8:	61 e0       	ldi	r22, 0x01	; 1
+    2aaa:	40 e0       	ldi	r20, 0x00	; 0
+    2aac:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 				HEATING_ELEMENT_STATE=TRUE;
-    2a76:	81 e0       	ldi	r24, 0x01	; 1
-    2a78:	80 93 6c 01 	sts	0x016C, r24
+    2ab0:	81 e0       	ldi	r24, 0x01	; 1
+    2ab2:	80 93 6c 01 	sts	0x016C, r24
 				COOLING_ELEMENT_STATE=FALSE;
-    2a7c:	10 92 6d 01 	sts	0x016D, r1
-    2a80:	50 c0       	rjmp	.+160    	; 0x2b22 <main+0x188>
+    2ab6:	10 92 6d 01 	sts	0x016D, r1
+    2aba:	50 c0       	rjmp	.+160    	; 0x2b5c <main+0x1c2>
 			/*
 			 * if the current water temperature is grater than the set temperature by 5 degrees
 			 * heating element should be OFF
 			 * cooling element should be ON
 			 * */
-			else if((AVG_TEMP_SENSING-5)==SITTING_TEMP)
-    2a82:	80 91 6e 01 	lds	r24, 0x016E
-    2a86:	88 2f       	mov	r24, r24
-    2a88:	90 e0       	ldi	r25, 0x00	; 0
-    2a8a:	9c 01       	movw	r18, r24
-    2a8c:	25 50       	subi	r18, 0x05	; 5
-    2a8e:	30 40       	sbci	r19, 0x00	; 0
-    2a90:	80 91 68 01 	lds	r24, 0x0168
-    2a94:	88 2f       	mov	r24, r24
-    2a96:	90 e0       	ldi	r25, 0x00	; 0
-    2a98:	28 17       	cp	r18, r24
-    2a9a:	39 07       	cpc	r19, r25
-    2a9c:	09 f0       	breq	.+2      	; 0x2aa0 <main+0x106>
-    2a9e:	41 c0       	rjmp	.+130    	; 0x2b22 <main+0x188>
+			else if((AVG_TEMP_SENSING-5)==SETTING_TEMP)
+    2abc:	80 91 6e 01 	lds	r24, 0x016E
+    2ac0:	88 2f       	mov	r24, r24
+    2ac2:	90 e0       	ldi	r25, 0x00	; 0
+    2ac4:	9c 01       	movw	r18, r24
+    2ac6:	25 50       	subi	r18, 0x05	; 5
+    2ac8:	30 40       	sbci	r19, 0x00	; 0
+    2aca:	80 91 68 01 	lds	r24, 0x0168
+    2ace:	88 2f       	mov	r24, r24
+    2ad0:	90 e0       	ldi	r25, 0x00	; 0
+    2ad2:	28 17       	cp	r18, r24
+    2ad4:	39 07       	cpc	r19, r25
+    2ad6:	09 f0       	breq	.+2      	; 0x2ada <main+0x140>
+    2ad8:	41 c0       	rjmp	.+130    	; 0x2b5c <main+0x1c2>
 			{
 				Dio_WriteChannel(HEATING_ELEMENT_REG,HEATING_ELEMENT_PIN,STD_LOW);
-    2aa0:	e8 e3       	ldi	r30, 0x38	; 56
-    2aa2:	f0 e0       	ldi	r31, 0x00	; 0
-    2aa4:	80 81       	ld	r24, Z
-    2aa6:	60 e0       	ldi	r22, 0x00	; 0
-    2aa8:	40 e0       	ldi	r20, 0x00	; 0
-    2aaa:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    2ada:	e8 e3       	ldi	r30, 0x38	; 56
+    2adc:	f0 e0       	ldi	r31, 0x00	; 0
+    2ade:	80 81       	ld	r24, Z
+    2ae0:	60 e0       	ldi	r22, 0x00	; 0
+    2ae2:	40 e0       	ldi	r20, 0x00	; 0
+    2ae4:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 				Dio_WriteChannel(COOLING_ELEMENT_REG,COOLING_ELEMENT_PIN,STD_HIGH);
-    2aae:	e8 e3       	ldi	r30, 0x38	; 56
-    2ab0:	f0 e0       	ldi	r31, 0x00	; 0
-    2ab2:	80 81       	ld	r24, Z
-    2ab4:	61 e0       	ldi	r22, 0x01	; 1
-    2ab6:	41 e0       	ldi	r20, 0x01	; 1
-    2ab8:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    2ae8:	e8 e3       	ldi	r30, 0x38	; 56
+    2aea:	f0 e0       	ldi	r31, 0x00	; 0
+    2aec:	80 81       	ld	r24, Z
+    2aee:	61 e0       	ldi	r22, 0x01	; 1
+    2af0:	41 e0       	ldi	r20, 0x01	; 1
+    2af2:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 				HEATING_ELEMENT_STATE=FALSE;
-    2abc:	10 92 6c 01 	sts	0x016C, r1
+    2af6:	10 92 6c 01 	sts	0x016C, r1
 				COOLING_ELEMENT_STATE=TRUE;
-    2ac0:	81 e0       	ldi	r24, 0x01	; 1
-    2ac2:	80 93 6d 01 	sts	0x016D, r24
-    2ac6:	2d c0       	rjmp	.+90     	; 0x2b22 <main+0x188>
+    2afa:	81 e0       	ldi	r24, 0x01	; 1
+    2afc:	80 93 6d 01 	sts	0x016D, r24
+    2b00:	2d c0       	rjmp	.+90     	; 0x2b5c <main+0x1c2>
 			}
 		}
 
 		/*if ON_OFF_BUTTON release when the electric water heater in ON state put every thing in OFF state*/
 		else if(Button_Pressed(ON_OFF_BUTTON)&&ON_OFF_STATE==TRUE)
-    2ac8:	80 e0       	ldi	r24, 0x00	; 0
-    2aca:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2ace:	88 23       	and	r24, r24
-    2ad0:	41 f1       	breq	.+80     	; 0x2b22 <main+0x188>
-    2ad2:	80 91 6a 01 	lds	r24, 0x016A
-    2ad6:	81 30       	cpi	r24, 0x01	; 1
-    2ad8:	21 f5       	brne	.+72     	; 0x2b22 <main+0x188>
+    2b02:	80 e0       	ldi	r24, 0x00	; 0
+    2b04:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2b08:	88 23       	and	r24, r24
+    2b0a:	41 f1       	breq	.+80     	; 0x2b5c <main+0x1c2>
+    2b0c:	80 91 6a 01 	lds	r24, 0x016A
+    2b10:	81 30       	cpi	r24, 0x01	; 1
+    2b12:	21 f5       	brne	.+72     	; 0x2b5c <main+0x1c2>
 		{
 			while(Button_Pressed(ON_OFF_BUTTON));
-    2ada:	80 e0       	ldi	r24, 0x00	; 0
-    2adc:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2ae0:	88 23       	and	r24, r24
-    2ae2:	d9 f7       	brne	.-10     	; 0x2ada <main+0x140>
+    2b14:	80 e0       	ldi	r24, 0x00	; 0
+    2b16:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2b1a:	88 23       	and	r24, r24
+    2b1c:	d9 f7       	brne	.-10     	; 0x2b14 <main+0x17a>
 			/*OFF the led of ON_OFF_STATE*/
 			Led_OFF(ON_OFF_LED);
-    2ae4:	80 e0       	ldi	r24, 0x00	; 0
-    2ae6:	0e 94 86 10 	call	0x210c	; 0x210c <Led_OFF>
+    2b1e:	80 e0       	ldi	r24, 0x00	; 0
+    2b20:	0e 94 86 10 	call	0x210c	; 0x210c <Led_OFF>
 
 			/*OFF the heating element and cooling element*/
 			Dio_WriteChannel(HEATING_ELEMENT_REG,HEATING_ELEMENT_PIN,STD_LOW);
-    2aea:	e8 e3       	ldi	r30, 0x38	; 56
-    2aec:	f0 e0       	ldi	r31, 0x00	; 0
-    2aee:	80 81       	ld	r24, Z
-    2af0:	60 e0       	ldi	r22, 0x00	; 0
-    2af2:	40 e0       	ldi	r20, 0x00	; 0
-    2af4:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    2b24:	e8 e3       	ldi	r30, 0x38	; 56
+    2b26:	f0 e0       	ldi	r31, 0x00	; 0
+    2b28:	80 81       	ld	r24, Z
+    2b2a:	60 e0       	ldi	r22, 0x00	; 0
+    2b2c:	40 e0       	ldi	r20, 0x00	; 0
+    2b2e:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 			Dio_WriteChannel(COOLING_ELEMENT_REG,COOLING_ELEMENT_PIN,STD_LOW);
-    2af8:	e8 e3       	ldi	r30, 0x38	; 56
-    2afa:	f0 e0       	ldi	r31, 0x00	; 0
-    2afc:	80 81       	ld	r24, Z
-    2afe:	61 e0       	ldi	r22, 0x01	; 1
-    2b00:	40 e0       	ldi	r20, 0x00	; 0
-    2b02:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
+    2b32:	e8 e3       	ldi	r30, 0x38	; 56
+    2b34:	f0 e0       	ldi	r31, 0x00	; 0
+    2b36:	80 81       	ld	r24, Z
+    2b38:	61 e0       	ldi	r22, 0x01	; 1
+    2b3a:	40 e0       	ldi	r20, 0x00	; 0
+    2b3c:	0e 94 31 0b 	call	0x1662	; 0x1662 <Dio_WriteChannel>
 
 			/*save last updated setting temperature*/
-			EEPROM24C16_Write_Byte(0,SITTING_TEMP);
-    2b06:	20 91 68 01 	lds	r18, 0x0168
-    2b0a:	80 e0       	ldi	r24, 0x00	; 0
-    2b0c:	90 e0       	ldi	r25, 0x00	; 0
-    2b0e:	62 2f       	mov	r22, r18
-    2b10:	0e 94 ee 10 	call	0x21dc	; 0x21dc <EEPROM24C16_Write_Byte>
-//			EEPROM_Write(0,SITTING_TEMP);
+			EEPROM24C16_Write_Byte(0,SETTING_TEMP);
+    2b40:	20 91 68 01 	lds	r18, 0x0168
+    2b44:	80 e0       	ldi	r24, 0x00	; 0
+    2b46:	90 e0       	ldi	r25, 0x00	; 0
+    2b48:	62 2f       	mov	r22, r18
+    2b4a:	0e 94 ee 10 	call	0x21dc	; 0x21dc <EEPROM24C16_Write_Byte>
+			//			EEPROM_Write(0,SETTING_TEMP);
 
 			/*SSD show zero when the Electric Water Heater is OFF*/
 			SSD_DelayWithDisaplayMS(0,100);
-    2b14:	80 e0       	ldi	r24, 0x00	; 0
-    2b16:	64 e6       	ldi	r22, 0x64	; 100
-    2b18:	70 e0       	ldi	r23, 0x00	; 0
-    2b1a:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
+    2b4e:	80 e0       	ldi	r24, 0x00	; 0
+    2b50:	64 e6       	ldi	r22, 0x64	; 100
+    2b52:	70 e0       	ldi	r23, 0x00	; 0
+    2b54:	0e 94 a2 0f 	call	0x1f44	; 0x1f44 <SSD_DelayWithDisaplayMS>
 			/*update ON_OFF_STATE to be OFF*/
 			ON_OFF_STATE=FALSE;
-    2b1e:	10 92 6a 01 	sts	0x016A, r1
+    2b58:	10 92 6a 01 	sts	0x016A, r1
 		}
 		/*The first “Up” or “Down” button press, enters the temperature setting mode*/
 		if((Button_Pressed(UP_BUTTON)||Button_Pressed(DOWN_BUTTON))&&ON_OFF_STATE==TRUE)
-    2b22:	81 e0       	ldi	r24, 0x01	; 1
-    2b24:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2b28:	88 23       	and	r24, r24
-    2b2a:	31 f4       	brne	.+12     	; 0x2b38 <main+0x19e>
-    2b2c:	82 e0       	ldi	r24, 0x02	; 2
-    2b2e:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2b32:	88 23       	and	r24, r24
-    2b34:	09 f4       	brne	.+2      	; 0x2b38 <main+0x19e>
-    2b36:	5d cf       	rjmp	.-326    	; 0x29f2 <main+0x58>
-    2b38:	80 91 6a 01 	lds	r24, 0x016A
-    2b3c:	81 30       	cpi	r24, 0x01	; 1
-    2b3e:	09 f0       	breq	.+2      	; 0x2b42 <main+0x1a8>
-    2b40:	58 cf       	rjmp	.-336    	; 0x29f2 <main+0x58>
+    2b5c:	81 e0       	ldi	r24, 0x01	; 1
+    2b5e:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2b62:	88 23       	and	r24, r24
+    2b64:	31 f4       	brne	.+12     	; 0x2b72 <main+0x1d8>
+    2b66:	82 e0       	ldi	r24, 0x02	; 2
+    2b68:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2b6c:	88 23       	and	r24, r24
+    2b6e:	09 f4       	brne	.+2      	; 0x2b72 <main+0x1d8>
+    2b70:	42 cf       	rjmp	.-380    	; 0x29f6 <main+0x5c>
+    2b72:	80 91 6a 01 	lds	r24, 0x016A
+    2b76:	81 30       	cpi	r24, 0x01	; 1
+    2b78:	09 f0       	breq	.+2      	; 0x2b7c <main+0x1e2>
+    2b7a:	3d cf       	rjmp	.-390    	; 0x29f6 <main+0x5c>
 		{
 			while(Button_Pressed(UP_BUTTON)||Button_Pressed(DOWN_BUTTON));
-    2b42:	81 e0       	ldi	r24, 0x01	; 1
-    2b44:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2b48:	88 23       	and	r24, r24
-    2b4a:	d9 f7       	brne	.-10     	; 0x2b42 <main+0x1a8>
-    2b4c:	82 e0       	ldi	r24, 0x02	; 2
-    2b4e:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
-    2b52:	88 23       	and	r24, r24
-    2b54:	b1 f7       	brne	.-20     	; 0x2b42 <main+0x1a8>
+    2b7c:	81 e0       	ldi	r24, 0x01	; 1
+    2b7e:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2b82:	88 23       	and	r24, r24
+    2b84:	d9 f7       	brne	.-10     	; 0x2b7c <main+0x1e2>
+    2b86:	82 e0       	ldi	r24, 0x02	; 2
+    2b88:	0e 94 fa 11 	call	0x23f4	; 0x23f4 <Button_Pressed>
+    2b8c:	88 23       	and	r24, r24
+    2b8e:	b1 f7       	brne	.-20     	; 0x2b7c <main+0x1e2>
 
 			SETTING_MODE_STATE=TRUE;
-    2b56:	81 e0       	ldi	r24, 0x01	; 1
-    2b58:	80 93 6b 01 	sts	0x016B, r24
+    2b90:	81 e0       	ldi	r24, 0x01	; 1
+    2b92:	80 93 6b 01 	sts	0x016B, r24
 			Led_Toggle(LED1);
-    2b5c:	81 e0       	ldi	r24, 0x01	; 1
-    2b5e:	0e 94 b7 10 	call	0x216e	; 0x216e <Led_Toggle>
-			/*
-			 * Confider the timer0
-			 * by setting preload and prescaler
-			 * and enable interrupt of timer0
-			 * so interrupt occurs almost every 1ms so can use it to make 100ms
-			 */TIMER0_TCNT0_REG=TIMER0_PRELOAD;
-    2b62:	e2 e5       	ldi	r30, 0x52	; 82
-    2b64:	f0 e0       	ldi	r31, 0x00	; 0
-    2b66:	88 e5       	ldi	r24, 0x58	; 88
-    2b68:	80 83       	st	Z, r24
-			 TIMER0_TCCR0_REG=TIMER0_CS_64_PRESCALER;
-    2b6a:	e3 e5       	ldi	r30, 0x53	; 83
-    2b6c:	f0 e0       	ldi	r31, 0x00	; 0
-    2b6e:	83 e0       	ldi	r24, 0x03	; 3
-    2b70:	80 83       	st	Z, r24
-			 TIMER0_EnableInterrupt();
-    2b72:	0e 94 b8 07 	call	0xf70	; 0xf70 <TIMER0_EnableInterrupt>
-			  * Confider the timer1
-			  * by setting preload and prescaler
-			  * and enable interrupt of timer1
-			  * so interrupt occurs every 1 second so can use it to make 1 second
-			  */
-			 TIMER1_TCNT1_REG=TIMER1_PRELOAD;
-    2b76:	ec e4       	ldi	r30, 0x4C	; 76
-    2b78:	f0 e0       	ldi	r31, 0x00	; 0
-    2b7a:	87 ef       	ldi	r24, 0xF7	; 247
-    2b7c:	92 ec       	ldi	r25, 0xC2	; 194
-    2b7e:	91 83       	std	Z+1, r25	; 0x01
-    2b80:	80 83       	st	Z, r24
-			 TIMER1_TCCR1A_REG=0x00;
-    2b82:	ef e4       	ldi	r30, 0x4F	; 79
-    2b84:	f0 e0       	ldi	r31, 0x00	; 0
-    2b86:	10 82       	st	Z, r1
-			 TIMER1_TCCR1B_REG=TIMER0_CS_1024_PRESCALER;
-    2b88:	ee e4       	ldi	r30, 0x4E	; 78
-    2b8a:	f0 e0       	ldi	r31, 0x00	; 0
-    2b8c:	85 e0       	ldi	r24, 0x05	; 5
-    2b8e:	80 83       	st	Z, r24
-			 TIMER1_EnableInterrupt();
-    2b90:	0e 94 75 07 	call	0xeea	; 0xeea <TIMER1_EnableInterrupt>
+    2b96:	81 e0       	ldi	r24, 0x01	; 1
+    2b98:	0e 94 b7 10 	call	0x216e	; 0x216e <Led_Toggle>
 
-			 /*Enable all interrupts so interrupt of timer0 and timer1 can occure*/
-			 EnableAllInterrupts();
-    2b94:	0e 94 d3 09 	call	0x13a6	; 0x13a6 <EnableAllInterrupts>
+			/*enter the setting mode*/
+			setting_mode();
+    2b9c:	0e 94 9d 13 	call	0x273a	; 0x273a <setting_mode>
+    2ba0:	2a cf       	rjmp	.-428    	; 0x29f6 <main+0x5c>
 
-			 /*enter the setting mode*/
-			 setting_mode();
-    2b98:	0e 94 9d 13 	call	0x273a	; 0x273a <setting_mode>
-    2b9c:	2a cf       	rjmp	.-428    	; 0x29f2 <main+0x58>
+00002ba2 <__udivmodqi4>:
+    2ba2:	99 1b       	sub	r25, r25
+    2ba4:	79 e0       	ldi	r23, 0x09	; 9
+    2ba6:	04 c0       	rjmp	.+8      	; 0x2bb0 <__udivmodqi4_ep>
 
-00002b9e <__udivmodqi4>:
-    2b9e:	99 1b       	sub	r25, r25
-    2ba0:	79 e0       	ldi	r23, 0x09	; 9
-    2ba2:	04 c0       	rjmp	.+8      	; 0x2bac <__udivmodqi4_ep>
+00002ba8 <__udivmodqi4_loop>:
+    2ba8:	99 1f       	adc	r25, r25
+    2baa:	96 17       	cp	r25, r22
+    2bac:	08 f0       	brcs	.+2      	; 0x2bb0 <__udivmodqi4_ep>
+    2bae:	96 1b       	sub	r25, r22
 
-00002ba4 <__udivmodqi4_loop>:
-    2ba4:	99 1f       	adc	r25, r25
-    2ba6:	96 17       	cp	r25, r22
-    2ba8:	08 f0       	brcs	.+2      	; 0x2bac <__udivmodqi4_ep>
-    2baa:	96 1b       	sub	r25, r22
+00002bb0 <__udivmodqi4_ep>:
+    2bb0:	88 1f       	adc	r24, r24
+    2bb2:	7a 95       	dec	r23
+    2bb4:	c9 f7       	brne	.-14     	; 0x2ba8 <__udivmodqi4_loop>
+    2bb6:	80 95       	com	r24
+    2bb8:	08 95       	ret
 
-00002bac <__udivmodqi4_ep>:
-    2bac:	88 1f       	adc	r24, r24
-    2bae:	7a 95       	dec	r23
-    2bb0:	c9 f7       	brne	.-14     	; 0x2ba4 <__udivmodqi4_loop>
-    2bb2:	80 95       	com	r24
-    2bb4:	08 95       	ret
+00002bba <__prologue_saves__>:
+    2bba:	2f 92       	push	r2
+    2bbc:	3f 92       	push	r3
+    2bbe:	4f 92       	push	r4
+    2bc0:	5f 92       	push	r5
+    2bc2:	6f 92       	push	r6
+    2bc4:	7f 92       	push	r7
+    2bc6:	8f 92       	push	r8
+    2bc8:	9f 92       	push	r9
+    2bca:	af 92       	push	r10
+    2bcc:	bf 92       	push	r11
+    2bce:	cf 92       	push	r12
+    2bd0:	df 92       	push	r13
+    2bd2:	ef 92       	push	r14
+    2bd4:	ff 92       	push	r15
+    2bd6:	0f 93       	push	r16
+    2bd8:	1f 93       	push	r17
+    2bda:	cf 93       	push	r28
+    2bdc:	df 93       	push	r29
+    2bde:	cd b7       	in	r28, 0x3d	; 61
+    2be0:	de b7       	in	r29, 0x3e	; 62
+    2be2:	ca 1b       	sub	r28, r26
+    2be4:	db 0b       	sbc	r29, r27
+    2be6:	0f b6       	in	r0, 0x3f	; 63
+    2be8:	f8 94       	cli
+    2bea:	de bf       	out	0x3e, r29	; 62
+    2bec:	0f be       	out	0x3f, r0	; 63
+    2bee:	cd bf       	out	0x3d, r28	; 61
+    2bf0:	09 94       	ijmp
 
-00002bb6 <__prologue_saves__>:
-    2bb6:	2f 92       	push	r2
-    2bb8:	3f 92       	push	r3
-    2bba:	4f 92       	push	r4
-    2bbc:	5f 92       	push	r5
-    2bbe:	6f 92       	push	r6
-    2bc0:	7f 92       	push	r7
-    2bc2:	8f 92       	push	r8
-    2bc4:	9f 92       	push	r9
-    2bc6:	af 92       	push	r10
-    2bc8:	bf 92       	push	r11
-    2bca:	cf 92       	push	r12
-    2bcc:	df 92       	push	r13
-    2bce:	ef 92       	push	r14
-    2bd0:	ff 92       	push	r15
-    2bd2:	0f 93       	push	r16
-    2bd4:	1f 93       	push	r17
-    2bd6:	cf 93       	push	r28
-    2bd8:	df 93       	push	r29
-    2bda:	cd b7       	in	r28, 0x3d	; 61
-    2bdc:	de b7       	in	r29, 0x3e	; 62
-    2bde:	ca 1b       	sub	r28, r26
-    2be0:	db 0b       	sbc	r29, r27
-    2be2:	0f b6       	in	r0, 0x3f	; 63
-    2be4:	f8 94       	cli
-    2be6:	de bf       	out	0x3e, r29	; 62
-    2be8:	0f be       	out	0x3f, r0	; 63
-    2bea:	cd bf       	out	0x3d, r28	; 61
-    2bec:	09 94       	ijmp
+00002bf2 <__epilogue_restores__>:
+    2bf2:	2a 88       	ldd	r2, Y+18	; 0x12
+    2bf4:	39 88       	ldd	r3, Y+17	; 0x11
+    2bf6:	48 88       	ldd	r4, Y+16	; 0x10
+    2bf8:	5f 84       	ldd	r5, Y+15	; 0x0f
+    2bfa:	6e 84       	ldd	r6, Y+14	; 0x0e
+    2bfc:	7d 84       	ldd	r7, Y+13	; 0x0d
+    2bfe:	8c 84       	ldd	r8, Y+12	; 0x0c
+    2c00:	9b 84       	ldd	r9, Y+11	; 0x0b
+    2c02:	aa 84       	ldd	r10, Y+10	; 0x0a
+    2c04:	b9 84       	ldd	r11, Y+9	; 0x09
+    2c06:	c8 84       	ldd	r12, Y+8	; 0x08
+    2c08:	df 80       	ldd	r13, Y+7	; 0x07
+    2c0a:	ee 80       	ldd	r14, Y+6	; 0x06
+    2c0c:	fd 80       	ldd	r15, Y+5	; 0x05
+    2c0e:	0c 81       	ldd	r16, Y+4	; 0x04
+    2c10:	1b 81       	ldd	r17, Y+3	; 0x03
+    2c12:	aa 81       	ldd	r26, Y+2	; 0x02
+    2c14:	b9 81       	ldd	r27, Y+1	; 0x01
+    2c16:	ce 0f       	add	r28, r30
+    2c18:	d1 1d       	adc	r29, r1
+    2c1a:	0f b6       	in	r0, 0x3f	; 63
+    2c1c:	f8 94       	cli
+    2c1e:	de bf       	out	0x3e, r29	; 62
+    2c20:	0f be       	out	0x3f, r0	; 63
+    2c22:	cd bf       	out	0x3d, r28	; 61
+    2c24:	ed 01       	movw	r28, r26
+    2c26:	08 95       	ret
 
-00002bee <__epilogue_restores__>:
-    2bee:	2a 88       	ldd	r2, Y+18	; 0x12
-    2bf0:	39 88       	ldd	r3, Y+17	; 0x11
-    2bf2:	48 88       	ldd	r4, Y+16	; 0x10
-    2bf4:	5f 84       	ldd	r5, Y+15	; 0x0f
-    2bf6:	6e 84       	ldd	r6, Y+14	; 0x0e
-    2bf8:	7d 84       	ldd	r7, Y+13	; 0x0d
-    2bfa:	8c 84       	ldd	r8, Y+12	; 0x0c
-    2bfc:	9b 84       	ldd	r9, Y+11	; 0x0b
-    2bfe:	aa 84       	ldd	r10, Y+10	; 0x0a
-    2c00:	b9 84       	ldd	r11, Y+9	; 0x09
-    2c02:	c8 84       	ldd	r12, Y+8	; 0x08
-    2c04:	df 80       	ldd	r13, Y+7	; 0x07
-    2c06:	ee 80       	ldd	r14, Y+6	; 0x06
-    2c08:	fd 80       	ldd	r15, Y+5	; 0x05
-    2c0a:	0c 81       	ldd	r16, Y+4	; 0x04
-    2c0c:	1b 81       	ldd	r17, Y+3	; 0x03
-    2c0e:	aa 81       	ldd	r26, Y+2	; 0x02
-    2c10:	b9 81       	ldd	r27, Y+1	; 0x01
-    2c12:	ce 0f       	add	r28, r30
-    2c14:	d1 1d       	adc	r29, r1
-    2c16:	0f b6       	in	r0, 0x3f	; 63
-    2c18:	f8 94       	cli
-    2c1a:	de bf       	out	0x3e, r29	; 62
-    2c1c:	0f be       	out	0x3f, r0	; 63
-    2c1e:	cd bf       	out	0x3d, r28	; 61
-    2c20:	ed 01       	movw	r28, r26
-    2c22:	08 95       	ret
+00002c28 <_exit>:
+    2c28:	f8 94       	cli
 
-00002c24 <_exit>:
-    2c24:	f8 94       	cli
-
-00002c26 <__stop_program>:
-    2c26:	ff cf       	rjmp	.-2      	; 0x2c26 <__stop_program>
+00002c2a <__stop_program>:
+    2c2a:	ff cf       	rjmp	.-2      	; 0x2c2a <__stop_program>
